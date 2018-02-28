@@ -1,21 +1,20 @@
 class Balls{
-	private float opportunity;
-	public Balls(float opportunity){
-		this.opportunity = opportunity;
+	public double opportunity;
+
+	public Balls(){
+		this.opportunity = 0;
 	}
 
-	public float pokeball(){
-		this.opportunity = 0.8f;
-		return this.opportunity;
+	public double getOpportunity(){
+		return opportunity;
 	}
 
-	public float greatball(){
-		this.opportunity = 0.9f;
-		return this.opportunity;
-	}
-
-	public float ultraball(){
-		this.opportunity = 1.0f;
-		return this.opportunity;
+	public boolean catchPokemon(float mood){
+		if((mood * opportunity) > 0.5){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }

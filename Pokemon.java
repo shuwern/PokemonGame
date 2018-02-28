@@ -8,6 +8,7 @@ class Pokemon{
 	private int step;
 	private float gainingWeightStep;
 	private String[] types;
+	private float mood;
 
 	public Pokemon(String name,
 		       float weight,
@@ -16,6 +17,7 @@ class Pokemon{
 		       String[] types){
 		this.name = name;
 		this.weight = weight;
+		this.mood = mood;
 		this.stepLength = stepLength;
 		this.gainingWeightStep = gainingWeightStep;
 		step = 0;
@@ -24,6 +26,10 @@ class Pokemon{
 			this.types = new String[] {"normal"};
 		else
 			this.types = types;
+
+		Random rand = new Random();
+		mood = rand.nextInt(5);
+
 	}
 
 	public void walk(){
@@ -50,6 +56,14 @@ class Pokemon{
 
 	public String getName(){
 		return this.name;
+	}
+
+	public void setName(String name){
+		this.name = name;
+	}
+
+	public float getMood(){	
+		return this.mood;
 	}
 
 }

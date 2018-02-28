@@ -19,7 +19,7 @@ class CommandParser{
 		System.out.println("Hello Pokemon Game");
 		while(isRunning){
 			System.out.print("\nWhat do you want?(List, Add, Remove, Feed, Walk, Quit): ");
-			command = commandScanner.next();
+			command = commandScanner.nextLine();
 			// System.out.println("You type \'"+command+"\'");
 			if(command.equalsIgnoreCase("quit")){
 				isRunning = false;
@@ -100,25 +100,25 @@ class CommandParser{
 	}
 
 	private void gotoForest(){
-		/*System.out.print("Found" + random pokemon class name function);
-		System.out.print("Choose your ball(pokeball, greatball, ultraball): ");
-		String ball = this.commandScanner.next();
-		float opp;
-		if(ball.equalsIgnoreCase("pokeball")){
-			opp = balls.pokeball() * pokemon mood ;
-			if(opp >= 0.5)
-				pokemonFarm.addPokemon(pokemon type);
+		Forest forest = new Forest();
+		Bag bag = new Bag();
+		forest.foundPokemon();
+		
+		System.out.print("Catch or RunAway: ");
+		String cmd = commandScanner.nextLine();
+
+		if(cmd.equalsIgnoreCase("catch")){
+			System.out.print("Choose your ball: ");
+			String ball = commandScanner.nextLine();
+			bag.useBall(ball, forest.getWildPokemon());
+			bag.listItem();
 		}
-		else if(ball.equalsIgnoreCase("greatball")){
-			opp = balls.greatball() * pokemon mood;
-			if(opp >= 0.5)
-				pokemonFarm.addPokemon(pokemon type);
+
+		else if(cmd.equalsIgnoreCase("runaway")){
+			System.out.println("Escape from forest...");
 		}
-		else if(ball.equalsIgnoreCase("ultraball")){
-			opp = balls.ultraball() * pokemon mood;
-			if(opp >= 0.5)
-				pokemonFarm.addPokemon(pokemon type);
-		}*/
+		
+		
 	}
 }
 
