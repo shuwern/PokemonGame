@@ -18,7 +18,7 @@ class CommandParser{
 
 		System.out.println("Hello Pokemon Game");
 		while(isRunning){
-			System.out.print("\nWhat do you want?(List, Add, Remove, Feed, Walk, Quit): ");
+			System.out.print("\nWhat do you want?(List, Add, Remove, Feed, Walk, Go to forest, Quit): ");
 			command = commandScanner.nextLine();
 			// System.out.println("You type \'"+command+"\'");
 			if(command.equalsIgnoreCase("quit")){
